@@ -2,6 +2,10 @@
 
 > 内容总结运营 MCP Server，支持网页抓取、文件读取、内容总结、主题汇总等功能
 
+<a href="https://glama.ai/mcp/servers/@yzfly/fullscope-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@yzfly/fullscope-mcp-server/badge" alt="FullScope-MCP MCP server" />
+</a>
+
 ## 🌟 功能特性
 
 FullScope-MCP 是一个功能全面的 Model Context Protocol (MCP) 服务器，专门用于内容总结和运营场景。支持以下核心功能：
