@@ -1,0 +1,82 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fullscope-mcp-server"
+version = "1.0.1"
+description = "FullScope-MCP: 内容总结运营 MCP Server，支持网页抓取、文件读取、内容总结、主题汇总等功能"
+authors = [
+    {name = "yzfly", email = "yz.liu.me@gmail.com"}
+]
+license = {text = "Apache-2.0"}
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["mcp", "content", "summarization", "web-scraping", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: General",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+
+dependencies = [
+    "mcp>=1.2.0",
+    "httpx>=0.25.0",
+    "beautifulsoup4>=4.12.0", 
+    "PyPDF2>=3.0.0",
+    "openai>=1.0.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yzfly/fullscope-mcp"
+Repository = "https://github.com/yzfly/fullscope-mcp"
+Documentation = "https://github.com/yzfly/fullscope-mcp#readme"
+"Bug Tracker" = "https://github.com/yzfly/fullscope-mcp/issues"
+"Author's Blog" = "https://www.npmjs.com/~langgpt"
+
+[project.scripts]
+fullscope-mcp-server = "fullscope_mcp_server.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fullscope_mcp_server"]
+
+[tool.hatch.build.sources]
+"src" = ""
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/README.md",
+    "/LICENSE",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
